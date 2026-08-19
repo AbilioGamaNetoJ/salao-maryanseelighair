@@ -2,18 +2,18 @@
 import { TESTIMONIALS } from '../data/salonData';
 ---
 
-<section id="depoimentos" class="py-24 bg-linen relative border-t border-champagne/15">
+<section id="depoimentos" class="py-24 bg-mocha relative border-t border-champagne/25">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
     <div class="reveal-on-scroll text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <div class="section-badge">
+      <div class="section-badge-light">
         <span>✦ Depoimentos Reais ✦</span>
       </div>
-      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-espresso">
-        O que dizem as clientes que <span class="italic gold-gradient-text">confiam na nossa arte</span>
+      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-cream">
+        O que dizem as clientes que <span class="italic gold-gradient-text-light">confiam na nossa arte</span>
       </h2>
-      <p class="text-taupe text-sm sm:text-base">
+      <p class="text-ivory/70 text-sm sm:text-base">
         A satisfação e a auto-estima elevada de quem viveu a experiência Maryan Seelig Concept.
       </p>
     </div>
@@ -21,20 +21,20 @@ import { TESTIMONIALS } from '../data/salonData';
     <!-- Testimonials Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {TESTIMONIALS.map((item) => (
-        <div class="reveal-on-scroll glass-panel glass-panel-hover rounded-3xl p-8 flex flex-col justify-between space-y-6 relative group border border-champagne/20 hover:border-champagne/40">
+        <div class="reveal-on-scroll glass-panel-dark glass-panel-hover rounded-3xl p-8 flex flex-col justify-between space-y-6 relative group border border-champagne/25 hover:border-champagne/50">
           
           <!-- Quote Icon and Highlight -->
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1 text-champagne-dark text-base">
+            <div class="flex items-center gap-1 text-champagne-light text-base">
               {'★'.repeat(item.stars)}
             </div>
-            <span class="px-3 py-1 rounded-full bg-champagne/10 border border-champagne/25 text-[11px] font-semibold uppercase tracking-wider text-champagne-dark">
+            <span class="px-3 py-1 rounded-full bg-champagne/20 border border-champagne/35 text-[11px] font-semibold uppercase tracking-wider text-champagne-light">
               {item.highlight}
             </span>
           </div>
 
           <!-- Quote Text -->
-          <blockquote class="text-taupe text-sm sm:text-base leading-relaxed italic font-light">
+          <blockquote class="text-ivory/75 text-sm sm:text-base leading-relaxed italic font-light">
             "{item.quote}"
           </blockquote>
 
@@ -44,8 +44,8 @@ import { TESTIMONIALS } from '../data/salonData';
               {item.name.charAt(0)}
             </div>
             <div>
-              <p class="font-serif-luxury text-lg font-medium text-espresso">{item.name}</p>
-              <p class="text-xs text-taupe">{item.role}</p>
+              <p class="font-serif-luxury text-lg font-medium text-cream">{item.name}</p>
+              <p class="text-xs text-ivory/55">{item.role}</p>
             </div>
           </div>
 

@@ -7,18 +7,18 @@ const stats = [
 ];
 ---
 
-<section class="py-12 bg-cream border-y border-champagne/20 relative z-10">
+<section class="py-14 bg-espresso border-y border-champagne/25 relative z-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 divide-y md:divide-y-0 md:divide-x divide-champagne/20">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 divide-y md:divide-y-0 md:divide-x divide-champagne/25">
       {stats.map((stat, index) => (
         <div class={`reveal-on-scroll flex flex-col items-center text-center px-4 ${index > 0 ? 'pt-6 md:pt-0' : ''}`}>
-          <span class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold gold-gradient-text">
+          <span class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold gold-gradient-text-light">
             {stat.value}
           </span>
-          <span class="text-sm font-semibold uppercase tracking-wider text-espresso mt-1">
+          <span class="text-sm font-semibold uppercase tracking-wider text-cream mt-1">
             {stat.label}
           </span>
-          <span class="text-xs text-taupe mt-1 max-w-[180px]">
+          <span class="text-xs text-ivory/60 mt-1 max-w-[180px]">
             {stat.desc}
           </span>
         </div>
