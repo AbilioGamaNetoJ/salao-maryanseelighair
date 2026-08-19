@@ -10,7 +10,7 @@ const categories = [
   { id: 'megahair', label: 'Mega Hair' }
 ];
 
-const tabActive = 'bg-champagne text-espresso font-semibold shadow-[0_8px_20px_rgba(196,165,116,0.35)]';
+const tabActive = 'bg-champagne text-espresso font-semibold shadow-[0_8px_20px_rgba(212,175,55,0.35)]';
 const tabIdle = 'bg-cream text-taupe hover:text-espresso hover:bg-linen border border-champagne/25';
 ---
 
@@ -104,7 +104,7 @@ const tabIdle = 'bg-cream text-taupe hover:text-espresso hover:bg-linen border b
     <div class="reveal-on-scroll mt-16 text-center">
       <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-4 sm:px-8 sm:py-4 rounded-2xl glass-panel border border-champagne/25">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-champagne to-blush flex items-center justify-center text-espresso font-bold text-sm">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-champagne to-champagne-light flex items-center justify-center text-espresso font-bold text-sm">
             IG
           </div>
           <div class="text-left">
@@ -178,7 +178,7 @@ const tabIdle = 'bg-cream text-taupe hover:text-espresso hover:bg-linen border b
   const tabs = document.querySelectorAll<HTMLButtonElement>('[data-category-btn]');
   const cards = document.querySelectorAll<HTMLElement>('.portfolio-card');
 
-  const activeClasses = ['bg-champagne', 'text-espresso', 'font-semibold', 'shadow-[0_8px_20px_rgba(196,165,116,0.35)]'];
+  const activeClasses = ['bg-champagne', 'text-espresso', 'font-semibold', 'shadow-[0_8px_20px_rgba(212,175,55,0.35)]'];
   const idleClasses = ['bg-cream', 'text-taupe', 'hover:text-espresso', 'hover:bg-linen', 'border', 'border-champagne/25'];
 
   tabs.forEach((tab) => {

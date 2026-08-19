@@ -46,7 +46,7 @@ import { SALON_INFO } from '../data/salonData';
         </div>
 
         <!-- Slider Drag Handle -->
-        <div class="absolute top-0 bottom-0 w-1 bg-champagne cursor-ew-resize flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(196,165,116,0.7)]" id="slider-handle" style="left: 50%;">
+        <div class="absolute top-0 bottom-0 w-1 bg-champagne cursor-ew-resize flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(212,175,55,0.7)]" id="slider-handle" style="left: 50%;">
           <div class="w-10 h-10 shrink-0 rounded-full bg-champagne text-espresso flex items-center justify-center shadow-xl border-2 border-cream font-bold text-xs">
             ⇄
           </div>
@@ -54,17 +54,12 @@ import { SALON_INFO } from '../data/salonData';
 
       </div>
 
-      <!-- Quick helper text & CTA below slider -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 px-2">
-        <p class="text-xs text-taupe flex items-center gap-2">
-          <span class="text-champagne-dark">💡</span>
-          <span>Dica: Arraste a linha dourada para a esquerda e direita para visualizar os detalhes da transição de cor.</span>
-        </p>
+      <div class="flex justify-center mt-6">
         <a 
           href={SALON_INFO.whatsappUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          class="gold-gradient-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2"
+          class="gold-gradient-btn px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center whitespace-nowrap"
         >
           <span>Quero uma transformação</span>
         </a>
