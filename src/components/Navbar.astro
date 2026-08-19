@@ -3,22 +3,22 @@ import BrandLogo from './BrandLogo.astro';
 import { SALON_INFO } from '../data/salonData';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-[#121110]/85 border-b border-amber-500/15" id="navbar">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl bg-[#0A0908]/90 border-b border-amber-500/15" id="navbar">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20 gap-4">
       
       <!-- Brand Logo -->
       <BrandLogo />
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center space-x-8">
-        <a href="#inicio" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">Início</a>
-        <a href="#servicos" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">Serviços</a>
-        <a href="#experiencia" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">A Experiência</a>
-        <a href="#transformacoes" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">Antes & Depois</a>
-        <a href="#portfolio" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">Galeria</a>
-        <a href="#depoimentos" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">Avaliações</a>
-        <a href="#localizacao" class="text-sm font-medium text-neutral-300 hover:text-amber-300 transition-colors">Localização</a>
+      <!-- Desktop Nav Links (No Wrap) -->
+      <nav class="hidden xl:flex items-center space-x-6 2xl:space-x-8 shrink-0">
+        <a href="#inicio" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">Início</a>
+        <a href="#servicos" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">Serviços</a>
+        <a href="#experiencia" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">A Experiência</a>
+        <a href="#transformacoes" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">Antes & Depois</a>
+        <a href="#portfolio" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">Galeria</a>
+        <a href="#depoimentos" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">Avaliações</a>
+        <a href="#localizacao" class="text-xs font-medium uppercase tracking-wider text-neutral-300 hover:text-amber-300 transition-colors whitespace-nowrap">Localização</a>
       </nav>
 
       <!-- Action Buttons -->
@@ -51,7 +51,7 @@ import { SALON_INFO } from '../data/salonData';
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="flex items-center lg:hidden">
+      <div class="flex items-center xl:hidden">
         <button 
           id="mobile-menu-btn" 
           type="button" 
@@ -69,7 +69,7 @@ import { SALON_INFO } from '../data/salonData';
   </div>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-b border-amber-500/20 bg-[#151311]/95 backdrop-blur-xl transition-all duration-300 px-6 py-6 space-y-4">
+  <div id="mobile-menu" class="hidden xl:hidden border-b border-amber-500/20 bg-[#0E0D0E]/98 backdrop-blur-xl transition-all duration-300 px-6 py-6 space-y-4">
     <a href="#inicio" class="mobile-nav-link block text-base font-medium text-neutral-200 hover:text-amber-300">Início</a>
     <a href="#servicos" class="mobile-nav-link block text-base font-medium text-neutral-200 hover:text-amber-300">Serviços</a>
     <a href="#experiencia" class="mobile-nav-link block text-base font-medium text-neutral-200 hover:text-amber-300">A Experiência</a>
