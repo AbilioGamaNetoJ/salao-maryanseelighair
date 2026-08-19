@@ -3,17 +3,16 @@ import BrandLogo from './BrandLogo.astro';
 import { SALON_INFO } from '../data/salonData';
 ---
 
-<footer class="bg-[#0E0D0C] border-t border-amber-500/15 pt-20 pb-12 relative overflow-hidden">
-  <!-- Subtle lighting -->
-  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none"></div>
+<footer class="bg-espresso border-t border-champagne/20 pt-20 pb-12 relative overflow-hidden">
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-champagne/10 rounded-full blur-[140px] pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-neutral-800/80">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-champagne/15">
       
       <!-- Brand & Bio (Col 1-5) -->
       <div class="lg:col-span-5 space-y-6">
-        <BrandLogo size="lg" />
-        <p class="text-neutral-400 text-sm leading-relaxed max-w-sm font-light">
+        <BrandLogo size="lg" inverted />
+        <p class="text-ivory/70 text-sm leading-relaxed max-w-sm font-light">
           {SALON_INFO.tagline}. Mais de 19 anos de experiência elevando a auto-estima e a sofisticação da mulher moderna em Florianópolis - SC.
         </p>
         <div class="flex items-center space-x-4 pt-2">
@@ -21,7 +20,7 @@ import { SALON_INFO } from '../data/salonData';
             href={SALON_INFO.instagramUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-amber-300 hover:border-amber-500/40 flex items-center justify-center transition-colors"
+            class="w-10 h-10 rounded-full bg-ivory/5 border border-champagne/25 text-ivory/80 hover:text-champagne-light hover:border-champagne/50 flex items-center justify-center transition-colors"
             aria-label="Instagram Maryan Seelig"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -32,7 +31,7 @@ import { SALON_INFO } from '../data/salonData';
             href={SALON_INFO.whatsappUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-amber-300 hover:border-amber-500/40 flex items-center justify-center transition-colors"
+            class="w-10 h-10 rounded-full bg-ivory/5 border border-champagne/25 text-ivory/80 hover:text-champagne-light hover:border-champagne/50 flex items-center justify-center transition-colors"
             aria-label="WhatsApp Maryan Seelig"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +42,7 @@ import { SALON_INFO } from '../data/salonData';
             href={SALON_INFO.mapsShareUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-amber-300 hover:border-amber-500/40 flex items-center justify-center transition-colors"
+            class="w-10 h-10 rounded-full bg-ivory/5 border border-champagne/25 text-ivory/80 hover:text-champagne-light hover:border-champagne/50 flex items-center justify-center transition-colors"
             aria-label="Google Maps Maryan Seelig"
           >
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,35 +55,35 @@ import { SALON_INFO } from '../data/salonData';
 
       <!-- Links Rápidos (Col 6-8) -->
       <div class="lg:col-span-3 space-y-4">
-        <h4 class="font-serif-luxury text-lg text-white font-medium">Navegação</h4>
-        <ul class="space-y-2 text-xs sm:text-sm text-neutral-400">
-          <li><a href="#inicio" class="hover:text-amber-300 transition-colors">Início</a></li>
-          <li><a href="#servicos" class="hover:text-amber-300 transition-colors">Serviços & Mechas</a></li>
-          <li><a href="#experiencia" class="hover:text-amber-300 transition-colors">A Especialista</a></li>
-          <li><a href="#transformacoes" class="hover:text-amber-300 transition-colors">Antes & Depois</a></li>
-          <li><a href="#portfolio" class="hover:text-amber-300 transition-colors">Galeria de Fotos</a></li>
-          <li><a href="#depoimentos" class="hover:text-amber-300 transition-colors">Depoimentos</a></li>
-          <li><a href="#localizacao" class="hover:text-amber-300 transition-colors">Localização & Contato</a></li>
+        <h4 class="font-serif-luxury text-lg text-ivory font-medium">Navegação</h4>
+        <ul class="space-y-2 text-xs sm:text-sm text-ivory/65">
+          <li><a href="#inicio" class="hover:text-champagne-light transition-colors">Início</a></li>
+          <li><a href="#servicos" class="hover:text-champagne-light transition-colors">Serviços & Mechas</a></li>
+          <li><a href="#experiencia" class="hover:text-champagne-light transition-colors">A Especialista</a></li>
+          <li><a href="#transformacoes" class="hover:text-champagne-light transition-colors">Antes & Depois</a></li>
+          <li><a href="#portfolio" class="hover:text-champagne-light transition-colors">Galeria de Fotos</a></li>
+          <li><a href="#depoimentos" class="hover:text-champagne-light transition-colors">Depoimentos</a></li>
+          <li><a href="#localizacao" class="hover:text-champagne-light transition-colors">Localização & Contato</a></li>
         </ul>
       </div>
 
       <!-- Contact Info (Col 9-12) -->
       <div class="lg:col-span-4 space-y-4">
-        <h4 class="font-serif-luxury text-lg text-white font-medium">Atendimento</h4>
-        <div class="space-y-3 text-xs sm:text-sm text-neutral-400 font-light">
+        <h4 class="font-serif-luxury text-lg text-ivory font-medium">Atendimento</h4>
+        <div class="space-y-3 text-xs sm:text-sm text-ivory/65 font-light">
           <p class="flex items-center gap-2">
-            <span class="text-amber-400">📱</span>
-            <span class="text-neutral-200">{SALON_INFO.phone}</span>
+            <span class="text-champagne">📱</span>
+            <span class="text-ivory/90">{SALON_INFO.phone}</span>
           </p>
           <p class="flex items-center gap-2">
-            <span class="text-amber-400">📸</span>
-            <span class="text-neutral-200">@{SALON_INFO.instagram}</span>
+            <span class="text-champagne">📸</span>
+            <span class="text-ivory/90">@{SALON_INFO.instagram}</span>
           </p>
           <p class="flex items-center gap-2">
-            <span class="text-amber-400">📍</span>
-            <span class="text-neutral-200">{SALON_INFO.city} - {SALON_INFO.state}</span>
+            <span class="text-champagne">📍</span>
+            <span class="text-ivory/90">{SALON_INFO.city} - {SALON_INFO.state}</span>
           </p>
-          <p class="text-[11px] text-neutral-500 pt-2">
+          <p class="text-[11px] text-ivory/50 pt-2">
             {SALON_INFO.hours}
           </p>
         </div>
@@ -93,11 +92,11 @@ import { SALON_INFO } from '../data/salonData';
     </div>
 
     <!-- Bottom Copyright -->
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 font-light">
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ivory/50 font-light">
       <p>&copy; {new Date().getFullYear()} Maryana Seelig Concept. Todos os direitos reservados.</p>
       <p class="flex items-center gap-1">
         <span>Feito com elegância para</span>
-        <span class="text-amber-400">Maryan Seelig Hair</span>
+        <span class="text-champagne">Maryan Seelig Hair</span>
       </p>
     </div>
   </div>

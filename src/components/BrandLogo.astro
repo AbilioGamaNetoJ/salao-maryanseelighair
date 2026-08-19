@@ -3,9 +3,10 @@ interface Props {
   variant?: 'full' | 'icon' | 'compact';
   class?: string;
   size?: 'sm' | 'md' | 'lg';
+  inverted?: boolean;
 }
 
-const { variant = 'full', class: className = '', size = 'md' } = Astro.props;
+const { variant = 'full', class: className = '', size = 'md', inverted = false } = Astro.props;
 
 const sizeMap = {
   sm: 'h-8',
@@ -17,20 +18,19 @@ const sizeMap = {
 <a href="#inicio" class={`inline-flex items-center gap-3.5 group text-decoration-none shrink-0 whitespace-nowrap ${className}`} aria-label="Maryan Seelig Hair Concept">
   <!-- Monogram MS with Luxury Floral Arc -->
   <div class="relative flex items-center justify-center shrink-0">
-    <div class="w-10 h-10 md:w-11 md:h-11 rounded-full p-[1.5px] bg-gradient-to-tr from-amber-600 via-amber-300 to-amber-100 shadow-[0_0_15px_rgba(212,175,55,0.25)] group-hover:shadow-[0_0_22px_rgba(212,175,55,0.45)] transition-all duration-500">
-      <div class="w-full h-full rounded-full bg-[#0D0D0E] flex items-center justify-center">
+    <div class="w-10 h-10 md:w-11 md:h-11 rounded-full p-[1.5px] bg-gradient-to-tr from-champagne-dark via-champagne-light to-cream shadow-[0_0_15px_rgba(196,165,116,0.28)] group-hover:shadow-[0_0_22px_rgba(196,165,116,0.45)] transition-all duration-500">
+      <div class={`w-full h-full rounded-full flex items-center justify-center ${inverted ? 'bg-espresso' : 'bg-cream'}`}>
         <svg viewBox="0 0 48 48" class="w-6 h-6 md:w-7 md:h-7" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Stylized M & S Intertwined -->
           <defs>
-            <linearGradient id="goldMonogram" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FFF5D1" />
-              <stop offset="50%" stop-color="#D4AF37" />
-              <stop offset="100%" stop-color="#997A2E" />
+            <linearGradient id={inverted ? 'goldMonogramDark' : 'goldMonogram'} x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F3E6C8" />
+              <stop offset="50%" stop-color="#C4A574" />
+              <stop offset="100%" stop-color="#9A7B4F" />
             </linearGradient>
           </defs>
-          <path d="M12 36V14L22 28L32 14V36" stroke="url(#goldMonogram)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="opacity-90"/>
-          <path d="M22 17C26 15 35 17 33 24C31 30 19 28 22 34C24 37 31 36 34 33" stroke="url(#goldMonogram)" stroke-width="2.2" stroke-linecap="round" class="opacity-95"/>
-          <circle cx="24" cy="9" r="1.5" fill="url(#goldMonogram)"/>
+          <path d="M12 36V14L22 28L32 14V36" stroke={inverted ? 'url(#goldMonogramDark)' : 'url(#goldMonogram)'} stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="opacity-90"/>
+          <path d="M22 17C26 15 35 17 33 24C31 30 19 28 22 34C24 37 31 36 34 33" stroke={inverted ? 'url(#goldMonogramDark)' : 'url(#goldMonogram)'} stroke-width="2.2" stroke-linecap="round" class="opacity-95"/>
+          <circle cx="24" cy="9" r="1.5" fill={inverted ? 'url(#goldMonogramDark)' : 'url(#goldMonogram)'}/>
         </svg>
       </div>
     </div>
@@ -38,10 +38,10 @@ const sizeMap = {
 
   {variant !== 'icon' && (
     <div class="flex flex-col whitespace-nowrap">
-      <span class="font-serif-luxury text-lg md:text-xl font-medium tracking-[0.22em] text-[#FAF7F2] uppercase group-hover:text-amber-200 transition-colors duration-300">
+      <span class={`font-serif-luxury text-lg md:text-xl font-medium tracking-[0.22em] uppercase transition-colors duration-300 ${inverted ? 'text-ivory group-hover:text-champagne-light' : 'text-espresso group-hover:text-champagne-dark'}`}>
         Maryana Seelig
       </span>
-      <span class="text-[9px] md:text-[10px] uppercase font-semibold tracking-[0.3em] text-amber-400/80 -mt-0.5">
+      <span class={`text-[9px] md:text-[10px] uppercase font-semibold tracking-[0.3em] -mt-0.5 ${inverted ? 'text-champagne/85' : 'text-champagne-dark/80'}`}>
         Hair Concept &bull; Floripa
       </span>
     </div>

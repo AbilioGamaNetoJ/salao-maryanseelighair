@@ -89,7 +89,7 @@ export const SERVICES: ServiceItem[] = [
       "Acabamento com escova modelada e finalização",
       "Praticidade real no dia a dia da cliente"
     ],
-    image: "/images/portfolio/Da-yMWROP5v_0.jpg",
+    image: "/images/portfolio/DYn5smJMlOY_0.jpg",
     tag: "Transformação",
     priceNote: "Avaliação Gratuita"
   },
@@ -104,7 +104,7 @@ export const SERVICES: ServiceItem[] = [
       "Penteados estruturados que duram o evento todo",
       "Atendimento exclusivo para o Dia da Noiva"
     ],
-    image: "/images/portfolio/DcMn5JWR9pq_0.jpg",
+    image: "/images/portfolio/DYdYKXyDBRL_0.jpg",
     tag: "Luxo & Noivas",
     priceNote: "Pacotes Especiais"
   },
@@ -119,7 +119,7 @@ export const SERVICES: ServiceItem[] = [
       "Livre de sulfatos, parabenos e conservantes químicos",
       "Toque aveludado, sedosidade e balanço imediato"
     ],
-    image: "/images/portfolio/DK5xaAgMjTT_0.jpg",
+    image: "/images/portfolio/DZ-dyD3O6Ok_0.jpg",
     tag: "Terapia Capilar",
     priceNote: "Nutrição Intensa"
   },
@@ -134,7 +134,7 @@ export const SERVICES: ServiceItem[] = [
       "Possibilidade de prender e fazer qualquer penteado",
       "Manutenção segura a cada 60-90 dias"
     ],
-    image: "/images/portfolio/DL0Dj8nsB6R_0.jpg",
+    image: "/images/portfolio/DbPTPrDsolc_0.jpg",
     tag: "Volume & Comprimento",
     priceNote: "Sob Consulta"
   }

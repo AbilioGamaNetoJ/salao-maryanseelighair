@@ -2,52 +2,52 @@
 import { SALON_INFO } from '../data/salonData';
 ---
 
-<section id="transformacoes" class="py-24 bg-[#0B0B0C] relative">
+<section id="transformacoes" class="py-24 bg-ivory relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header -->
     <div class="reveal-on-scroll text-center max-w-3xl mx-auto mb-14 space-y-4">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">
+      <div class="section-badge">
         <span>✦ Resultados Visíveis ✦</span>
       </div>
-      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-[#FAF7F2]">
+      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-espresso">
         Transformações Reais: <span class="italic gold-gradient-text">Arraste para comparar</span>
       </h2>
-      <p class="text-neutral-400 text-sm sm:text-base">
+      <p class="text-taupe text-sm sm:text-base">
         Veja como as mechas de baixa manutenção e a maquiagem autoral realçam a elegância e a expressão de cada mulher.
       </p>
     </div>
 
     <!-- Interactive Comparison Slider -->
     <div class="reveal-on-scroll max-w-4xl mx-auto">
-      <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30 select-none bg-zinc-950 group" id="comparison-container">
+      <div class="relative w-full max-w-md sm:max-w-lg mx-auto aspect-[3/4] rounded-3xl overflow-hidden shadow-xl border border-champagne/30 select-none bg-linen group" id="comparison-container">
         
         <!-- After Image (Background / Full Width) -->
         <img 
-          src="/images/portfolio/DCcpiaZvrbI_0.jpg" 
-          alt="Depois: Produção Completa Maryan Seelig Concept" 
-          class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
+          src="/images/transformacoes/debora-depois.jpg" 
+          alt="Depois: mechas de baixa manutenção e corte com movimento por Maryan Seelig" 
+          class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
         />
-        <span class="absolute top-5 right-5 px-3.5 py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-amber-400/50 text-amber-300 text-xs font-semibold uppercase tracking-wider shadow-lg">
+        <span class="absolute top-5 right-5 px-3.5 py-1.5 rounded-full bg-cream/90 backdrop-blur-md border border-champagne/50 text-champagne-dark text-xs font-semibold uppercase tracking-wider shadow-lg">
           ✨ Depois (Maryan Seelig)
         </span>
 
         <!-- Before Image (Clipped / Foreground) -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none" id="before-wrapper" style="width: 50%;">
           <img 
-            src="/images/portfolio/DL0Dj8nsB6R_1.jpg" 
-            alt="Antes: Cabelo antes da transformação" 
+            src="/images/transformacoes/debora-antes.jpg" 
+            alt="Antes: cabelo escuro sem luminosidade, antes da transformação" 
             class="absolute top-0 left-0 w-full h-full object-cover object-center max-w-none" 
             id="before-img"
           />
-          <span class="absolute top-5 left-5 px-3.5 py-1.5 rounded-full bg-zinc-950/90 backdrop-blur-md border border-zinc-700 text-zinc-300 text-xs font-semibold uppercase tracking-wider shadow-lg">
+          <span class="absolute top-5 left-5 px-3.5 py-1.5 rounded-full bg-cream/90 backdrop-blur-md border border-champagne/25 text-taupe text-xs font-semibold uppercase tracking-wider shadow-lg">
             Antes
           </span>
         </div>
 
         <!-- Slider Drag Handle -->
-        <div class="absolute top-0 bottom-0 w-1 bg-amber-400 cursor-ew-resize flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(212,175,55,0.8)]" id="slider-handle" style="left: 50%;">
-          <div class="w-10 h-10 rounded-full bg-amber-400 text-black flex items-center justify-center shadow-2xl border-2 border-white/80 font-bold text-xs">
+        <div class="absolute top-0 bottom-0 w-1 bg-champagne cursor-ew-resize flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(196,165,116,0.7)]" id="slider-handle" style="left: 50%;">
+          <div class="w-10 h-10 shrink-0 rounded-full bg-champagne text-espresso flex items-center justify-center shadow-xl border-2 border-cream font-bold text-xs">
             ⇄
           </div>
         </div>
@@ -56,8 +56,8 @@ import { SALON_INFO } from '../data/salonData';
 
       <!-- Quick helper text & CTA below slider -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 px-2">
-        <p class="text-xs text-neutral-400 flex items-center gap-2">
-          <span class="text-amber-400">💡</span>
+        <p class="text-xs text-taupe flex items-center gap-2">
+          <span class="text-champagne-dark">💡</span>
           <span>Dica: Arraste a linha dourada para a esquerda e direita para visualizar os detalhes da transição de cor.</span>
         </p>
         <a 
