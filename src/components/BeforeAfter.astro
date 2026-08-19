@@ -1,0 +1,138 @@
+---
+import { SALON_INFO } from '../data/salonData';
+---
+
+<section id="transformacoes" class="py-24 bg-[#121110] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="reveal-on-scroll text-center max-w-3xl mx-auto mb-14 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">
+        <span>✦ Resultados Visíveis ✦</span>
+      </div>
+      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-[#FAF7F2]">
+        Transformações Reais: <span class="italic gold-gradient-text">Arraste para comparar</span>
+      </h2>
+      <p class="text-neutral-400 text-sm sm:text-base">
+        Veja como as mechas de baixa manutenção e os tratamentos reconstrutores devolvem a luminosidade e a vida aos cabelos.
+      </p>
+    </div>
+
+    <!-- Interactive Comparison Slider -->
+    <div class="reveal-on-scroll max-w-4xl mx-auto">
+      <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/20 select-none bg-neutral-900 group" id="comparison-container">
+        
+        <!-- After Image (Background / Full Width) -->
+        <img 
+          src="/images/portfolio/DDAyxpOvx4g_0.jpg" 
+          alt="Depois: Loiro Summer Blond Maryan Seelig" 
+          class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        />
+        <span class="absolute top-5 right-5 px-3.5 py-1.5 rounded-full bg-neutral-950/80 backdrop-blur-md border border-amber-400/50 text-amber-300 text-xs font-semibold uppercase tracking-wider shadow-lg">
+          ✨ Depois (Maryan Seelig)
+        </span>
+
+        <!-- Before Image (Clipped / Foreground) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none" id="before-wrapper" style="width: 50%;">
+          <img 
+            src="/images/portfolio/DL0Dj8nsB6R_1.jpg" 
+            alt="Antes: Cabelo antes da transformação" 
+            class="absolute top-0 left-0 w-full h-full object-cover object-center max-w-none" 
+            id="before-img"
+          />
+          <span class="absolute top-5 left-5 px-3.5 py-1.5 rounded-full bg-neutral-950/80 backdrop-blur-md border border-neutral-700 text-neutral-300 text-xs font-semibold uppercase tracking-wider shadow-lg">
+            Antes
+          </span>
+        </div>
+
+        <!-- Slider Drag Handle -->
+        <div class="absolute top-0 bottom-0 w-1 bg-amber-400 cursor-ew-resize flex items-center justify-center -translate-x-1/2 z-20 shadow-[0_0_15px_rgba(212,175,55,0.8)]" id="slider-handle" style="left: 50%;">
+          <div class="w-10 h-10 rounded-full bg-amber-400 text-black flex items-center justify-center shadow-2xl border-2 border-white/80 font-bold text-xs">
+            ⇄
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick helper text & CTA below slider -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 px-2">
+        <p class="text-xs text-neutral-400 flex items-center gap-2">
+          <span class="text-amber-400">💡</span>
+          <span>Dica: Arraste a linha dourada para a esquerda e direita para visualizar os detalhes da transição de cor.</span>
+        </p>
+        <a 
+          href={SALON_INFO.whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="gold-gradient-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2"
+        >
+          <span>Quero uma transformação</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById('comparison-container');
+  const beforeWrapper = document.getElementById('before-wrapper');
+  const beforeImg = document.getElementById('before-img');
+  const handle = document.getElementById('slider-handle');
+
+  if (container && beforeWrapper && beforeImg && handle) {
+    let isDragging = false;
+
+    const setPosition = (xPos: number) => {
+      const rect = container.getBoundingClientRect();
+      let offsetX = xPos - rect.left;
+      if (offsetX < 0) offsetX = 0;
+      if (offsetX > rect.width) offsetX = rect.width;
+
+      const percentage = (offsetX / rect.width) * 100;
+      beforeWrapper.style.width = `${percentage}%`;
+      handle.style.left = `${percentage}%`;
+      beforeImg.style.width = `${rect.width}px`;
+    };
+
+    const updateImageWidth = () => {
+      if (container && beforeImg) {
+        beforeImg.style.width = `${container.getBoundingClientRect().width}px`;
+      }
+    };
+
+    window.addEventListener('resize', updateImageWidth);
+    updateImageWidth();
+
+    // Mouse Events
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      setPosition(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      setPosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Touch Events
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      if (e.touches[0]) setPosition(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      if (e.touches[0]) setPosition(e.touches[0].clientX);
+    });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+  }
+</script>

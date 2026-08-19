@@ -1,0 +1,28 @@
+---
+const stats = [
+  { value: "19+", label: "Anos de Carreira", desc: "Maestria e constante evolução técnica" },
+  { value: "5.000+", label: "Clientes Transformadas", desc: "Loiros e visuais autorais entregues" },
+  { value: "100%", label: "Atendimento Personalizado", desc: "Diagnóstico capilar e visagismo facial" },
+  { value: "5.0", label: "Avaliação Máxima", desc: "No Google Maps e recomendações reais" }
+];
+---
+
+<section class="py-12 bg-[#171513] border-y border-amber-500/15 relative z-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
+      {stats.map((stat, index) => (
+        <div class={`reveal-on-scroll flex flex-col items-center text-center px-4 ${index > 0 ? 'pt-6 md:pt-0' : ''}`}>
+          <span class="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold gold-gradient-text">
+            {stat.value}
+          </span>
+          <span class="text-sm font-semibold uppercase tracking-wider text-neutral-200 mt-1">
+            {stat.label}
+          </span>
+          <span class="text-xs text-neutral-400 mt-1 max-w-[180px]">
+            {stat.desc}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

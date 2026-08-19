@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+import { SALON_INFO } from '../data/salonData';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Maryan Seelig Hair Concept | Salão de Beleza & Mechas em Florianópolis",
+  description = "Especialista em Mechas de Baixa Manutenção, Loiros dos Sonhos, Cortes com Visagismo, Maquiagem e Spa Capilar em Florianópolis - SC. Mais de 19 anos de maestria."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://maryanseelig.com.br');
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": SALON_INFO.name,
+  "image": "https://maryanseelig.com.br/images/profile/maryana_seelig.jpg",
+  "telephone": SALON_INFO.phone,
+  "url": "https://maryanseelig.com.br",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Florianópolis",
+    "addressRegion": "SC",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.5969,
+    "longitude": -48.5495
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  ],
+  "sameAs": [
+    SALON_INFO.instagramUrl,
+    SALON_INFO.mapsShareUrl
+  ],
+  "priceRange": "$$$"
+};
+---
+
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#121110" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/profile/maryana_seelig.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/images/profile/maryana_seelig.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body class="bg-[#121110] text-[#FAF7F2] antialiased selection:bg-amber-500 selection:text-black">
+    <slot />
+
+    <!-- Global Scroll Reveal & Interactive Observers -->
+    <script>
+      const setupScrollReveal = () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          }
+        );
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+          observer.observe(el);
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupScrollReveal);
+      } else {
+        setupScrollReveal();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+---
+import { SALON_INFO } from '../data/salonData';
+---
+
+<section id="localizacao" class="py-24 bg-[#121110] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="reveal-on-scroll text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">
+        <span>✦ Localização Privilegiada ✦</span>
+      </div>
+      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-[#FAF7F2]">
+        Venha viver um momento de <span class="italic gold-gradient-text">puro cuidado e relaxamento</span>
+      </h2>
+      <p class="text-neutral-400 text-sm sm:text-base">
+        Ambiente exclusivo e acolhedor em Florianópolis - SC, com fácil acesso e comodidade.
+      </p>
+    </div>
+
+    <!-- Main Grid: Info + Maps Embed -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      
+      <!-- Left Column: Details & Route Buttons -->
+      <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+        
+        <!-- Info Cards -->
+        <div class="space-y-4">
+          
+          <div class="glass-panel p-6 rounded-2xl border border-neutral-800 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 text-lg">
+              📍
+            </div>
+            <div>
+              <h4 class="font-serif-luxury text-lg font-medium text-neutral-100">Endereço & Atendimento</h4>
+              <p class="text-xs sm:text-sm text-neutral-300 mt-1 leading-relaxed">
+                Florianópolis - Santa Catarina<br />
+                <span class="text-neutral-400 text-xs">Atendimento no salão e produções especiais em Jurerê Internacional e região metropolitana.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-neutral-800 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 text-lg">
+              ⏰
+            </div>
+            <div>
+              <h4 class="font-serif-luxury text-lg font-medium text-neutral-100">Horário de Funcionamento</h4>
+              <p class="text-xs sm:text-sm text-neutral-300 mt-1 leading-relaxed">
+                {SALON_INFO.hours}<br />
+                <span class="text-amber-400/90 text-xs font-medium">Domingo e Segunda: Fechado (ou eventos agendados)</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-neutral-800 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 text-lg">
+              ✨
+            </div>
+            <div>
+              <h4 class="font-serif-luxury text-lg font-medium text-neutral-100">Comodidades Exclusivas</h4>
+              <ul class="text-xs text-neutral-300 mt-1 space-y-1">
+                <li>• Ambiente climatizado e aconchegante</li>
+                <li>• Café especial, espumante e mimos</li>
+                <li>• Estacionamento prático e seguro</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a 
+            href={SALON_INFO.mapsShareUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="flex-1 gold-gradient-btn py-3 px-4 rounded-xl text-center text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Abrir no Google Maps</span>
+          </a>
+
+          <a 
+            href={SALON_INFO.whatsappUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="py-3 px-5 rounded-xl border border-amber-500/30 hover:border-amber-400 text-amber-300 hover:text-white bg-neutral-900/80 text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+          >
+            <span>Falar no WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Embedded Interactive Google Maps Frame -->
+      <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-amber-500/30 shadow-2xl relative min-h-[380px] sm:min-h-[460px] bg-neutral-900 group">
+        
+        <!-- Google Maps Embed for Florianópolis / Maryana Seelig Concept -->
+        <iframe
+          title="Mapa do Salão Maryana Seelig Florianópolis"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113175.76295325178!2d-48.61869818469857!3d-27.59487063467645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527394ef3ddc7bb%3A0x6b1079d363297a76!2sFlorian%C3%B3polis%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="100%"
+          style="border:0; filter: contrast(1.05) saturate(1.1);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full min-h-[420px]"
+        ></iframe>
+
+        <!-- Floating Badge on Map -->
+        <div class="absolute bottom-4 left-4 right-4 sm:right-auto glass-panel p-4 rounded-2xl border border-amber-500/30 shadow-2xl backdrop-blur-xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-amber-400 text-black flex items-center justify-center font-bold text-sm shadow-md">
+            MS
+          </div>
+          <div>
+            <p class="font-serif-luxury text-base font-medium text-white">Maryan Seelig Hair Concept</p>
+            <p class="text-[11px] text-amber-300">Florianópolis &bull; Santa Catarina</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

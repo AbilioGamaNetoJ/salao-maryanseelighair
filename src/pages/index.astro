@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Services from '../components/Services.astro';
+import Experience from '../components/Experience.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
+import PortfolioGallery from '../components/PortfolioGallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import BookingSimulator from '../components/BookingSimulator.astro';
+import LocationMap from '../components/LocationMap.astro';
+import Faq from '../components/Faq.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+---
+
+<Layout>
+  <!-- Navigation Header -->
+  <Navbar />
+
+  <!-- Main Sections -->
+  <main class="relative">
+    <Hero />
+    <Stats />
+    <Services />
+    <Experience />
+    <BeforeAfter />
+    <PortfolioGallery />
+    <Testimonials />
+    <BookingSimulator />
+    <LocationMap />
+    <Faq />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <!-- Floating WhatsApp CTA -->
+  <FloatingWhatsApp />
+</Layout>

@@ -1,0 +1,96 @@
+---
+import { SERVICES, SALON_INFO } from '../data/salonData';
+---
+
+<section id="servicos" class="py-24 bg-[#121110] relative">
+  <!-- Subtle lighting -->
+  <div class="absolute top-1/2 left-0 w-96 h-96 bg-amber-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-10 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="reveal-on-scroll text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">
+        <span>✦ Menu de Especialidades ✦</span>
+      </div>
+      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-[#FAF7F2]">
+        Procedimentos de excelência com <span class="italic gold-gradient-text">visagismo e cuidado real</span>
+      </h2>
+      <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+        Cada técnica é personalizada para harmonizar com seu tom de pele, estilo de vida e objetivos, mantendo a saúde do cabelo em primeiro lugar.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {SERVICES.map((service) => {
+        const serviceWhatsappUrl = `https://api.whatsapp.com/send?phone=${SALON_INFO.phoneRaw}&text=Ol%C3%A1%2C%20Maryana!%20Gostaria%20de%20consultar%20disponibilidade%20para%20o%20servi%C3%A7o%3A%20*${encodeURIComponent(service.title)}*.`;
+
+        return (
+          <div class="reveal-on-scroll glass-panel glass-panel-hover rounded-3xl overflow-hidden flex flex-col group border border-neutral-800 hover:border-amber-500/40 transition-all duration-500">
+            
+            <!-- Service Image Banner -->
+            <div class="relative h-60 overflow-hidden bg-neutral-900">
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1A1816] via-transparent to-transparent opacity-90"></div>
+              
+              <!-- Badge Tag -->
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-neutral-950/80 backdrop-blur-md border border-amber-500/30 text-[11px] font-semibold tracking-wider uppercase text-amber-300">
+                {service.tag}
+              </span>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
+              <div class="space-y-3">
+                <h3 class="font-serif-luxury text-2xl font-medium text-neutral-100 group-hover:text-amber-200 transition-colors">
+                  {service.title}
+                </h3>
+                <p class="text-xs uppercase tracking-wider text-amber-400/90 font-medium">
+                  {service.subtitle}
+                </p>
+                <p class="text-neutral-400 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+
+                <!-- Bullet Points -->
+                <ul class="pt-3 space-y-2 border-t border-neutral-800/80">
+                  {service.details.map((detail) => (
+                    <li class="flex items-start gap-2.5 text-xs text-neutral-300">
+                      <span class="text-amber-400 mt-0.5 text-sm">✓</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Action Link to WhatsApp -->
+              <div class="pt-4 border-t border-neutral-800/80">
+                <a 
+                  href={serviceWhatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full py-3 px-4 rounded-xl bg-neutral-900 hover:bg-gradient-to-r hover:from-amber-600 hover:to-amber-500 border border-amber-500/20 hover:border-transparent text-neutral-200 hover:text-black text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md"
+                >
+                  <span>Agendar no WhatsApp</span>
+                  <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

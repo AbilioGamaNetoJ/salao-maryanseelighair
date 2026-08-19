@@ -1,0 +1,80 @@
+---
+import { FAQS } from '../data/salonData';
+---
+
+<section id="faq" class="py-24 bg-[#141210] relative border-t border-amber-500/10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="reveal-on-scroll text-center mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-300 text-xs font-semibold uppercase tracking-[0.2em]">
+        <span>✦ Tire Suas Dúvidas ✦</span>
+      </div>
+      <h2 class="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-[#FAF7F2]">
+        Perguntas <span class="italic gold-gradient-text">Frequentes</span>
+      </h2>
+      <p class="text-neutral-400 text-sm sm:text-base">
+        Tudo o que você precisa saber antes de viver sua transformação.
+      </p>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="space-y-4" id="faq-accordion">
+      {FAQS.map((faq, index) => (
+        <div class="reveal-on-scroll glass-panel rounded-2xl border border-neutral-800/80 overflow-hidden transition-all duration-300">
+          <button 
+            type="button" 
+            class="faq-btn w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+            aria-expanded={index === 0 ? "true" : "false"}
+          >
+            <span class="font-serif-luxury text-lg sm:text-xl font-medium text-neutral-100">
+              {faq.question}
+            </span>
+            <span class="faq-icon text-amber-400 text-xl font-light transform transition-transform duration-300">
+              {index === 0 ? '−' : '+'}
+            </span>
+          </button>
+
+          <div class={`faq-content px-6 pb-5 pt-1 text-sm text-neutral-300 leading-relaxed font-light ${index === 0 ? '' : 'hidden'}`}>
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.faq-btn');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const content = btn.nextElementSibling as HTMLElement;
+      const icon = btn.querySelector('.faq-icon') as HTMLElement;
+
+      // Close all other FAQs
+      buttons.forEach((otherBtn) => {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          const otherContent = otherBtn.nextElementSibling as HTMLElement;
+          const otherIcon = otherBtn.querySelector('.faq-icon') as HTMLElement;
+          if (otherContent) otherContent.classList.add('hidden');
+          if (otherIcon) otherIcon.textContent = '+';
+        }
+      });
+
+      // Toggle current
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        content?.classList.add('hidden');
+        if (icon) icon.textContent = '+';
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        content?.classList.remove('hidden');
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
+</script>
