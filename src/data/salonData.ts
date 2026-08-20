@@ -89,7 +89,7 @@ export const SERVICES: ServiceItem[] = [
       "Acabamento com escova modelada e finalização",
       "Praticidade real no dia a dia da cliente"
     ],
-    image: "/images/portfolio/DYn5smJMlOY_0.jpg",
+    image: "/images/portfolio/DZ-dyD3O6Ok_0.jpg",
     tag: "Transformação",
     priceNote: "Avaliação Gratuita"
   },
@@ -119,7 +119,7 @@ export const SERVICES: ServiceItem[] = [
       "Livre de sulfatos, parabenos e conservantes químicos",
       "Toque aveludado, sedosidade e balanço imediato"
     ],
-    image: "/images/portfolio/DZ-dyD3O6Ok_0.jpg",
+    image: "/images/portfolio/DYn5smJMlOY_0.jpg",
     tag: "Terapia Capilar",
     priceNote: "Nutrição Intensa"
   },
@@ -134,7 +134,7 @@ export const SERVICES: ServiceItem[] = [
       "Possibilidade de prender e fazer qualquer penteado",
       "Manutenção segura a cada 60-90 dias"
     ],
-    image: "/images/portfolio/DbPTPrDsolc_0.jpg",
+    image: "/images/portfolio/DaeKlP6s6X6_0.jpg",
     tag: "Volume & Comprimento",
     priceNote: "Sob Consulta"
   }
@@ -159,7 +159,7 @@ export const PORTFOLIO: PortfolioItem[] = [
   },
   {
     id: "p3",
-    image: "/images/portfolio/DcMn5JWR9pq_0.jpg",
+    image: "/images/portfolio/DCcpiaZvrbI_2.jpg",
     title: "Makeup Glam & Pele Glow",
     category: "makeup",
     caption: "Produção de maquiagem para evento em Jurerê Internacional com acabamento impecável.",
@@ -199,10 +199,10 @@ export const PORTFOLIO: PortfolioItem[] = [
   },
   {
     id: "p8",
-    image: "/images/portfolio/DK5xaAgMjTT_0.jpg",
+    image: "/images/portfolio/DYn5smJMlOY_0.jpg",
     title: "Spa Capilar com Vapor de Ozônio",
     category: "tratamentos",
-    caption: "Recuperação intensiva dos fios de dentro para fora com tecnologia de ozonioterapia.",
+    caption: "Fios com brilho, maciez e movimento após protocolo de nutrição e recuperação profunda.",
     location: "Florianópolis"
   },
   {
@@ -223,18 +223,18 @@ export const PORTFOLIO: PortfolioItem[] = [
   },
   {
     id: "p11",
-    image: "/images/portfolio/DZ-dyD3O6Ok_0.jpg",
+    image: "/images/portfolio/DQ6jwdcDsiD_0.jpg",
     title: "Loiro Tendência Iluminado",
     category: "mechas",
-    caption: "Nuance personalizada que valoriza a elegância e a juventude do rosto.",
+    caption: "Loiro tendência com brilho, volume e camadas que iluminam o rosto sem marcar a raiz.",
     location: "Florianópolis"
   },
   {
     id: "p12",
-    image: "/images/portfolio/DWxLRiyjMSS_0.jpg",
+    image: "/images/portfolio/DZ-dyD3O6Ok_0.jpg",
     title: "Corte em Camadas com Balanço",
     category: "cortes",
-    caption: "Recriação de cortes clássicos com releitura sofisticada e contemporânea.",
+    caption: "Corte butterfly em camadas com volume, movimento e caimento que valoriza o rosto.",
     location: "Florianópolis"
   },
   {
@@ -247,7 +247,7 @@ export const PORTFOLIO: PortfolioItem[] = [
   },
   {
     id: "p14",
-    image: "/images/portfolio/DWSjJyLDPER_0.jpg",
+    image: "/images/portfolio/DWKWBj9h4uM_0.jpg",
     title: "Beleza Expressiva & Autoral",
     category: "makeup",
     caption: "Makeup autoral para mulheres empoderadas que buscam destaque com elegância.",
@@ -255,10 +255,10 @@ export const PORTFOLIO: PortfolioItem[] = [
   },
   {
     id: "p15",
-    image: "/images/portfolio/DVlRngUjpCi_0.jpg",
+    image: "/images/portfolio/DbPTPrDsolc_0.jpg",
     title: "Finalização & Textura Premium",
     category: "tratamentos",
-    caption: "Acabamento sedoso após cronograma capilar nutritivo e hidratação de luxo.",
+    caption: "Acabamento sedoso com brilho tridimensional após cronograma capilar e hidratação de luxo.",
     location: "Florianópolis"
   },
   {
